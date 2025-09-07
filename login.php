@@ -1,3 +1,7 @@
+// Проверка поддержки cURL
+if (!function_exists('curl_version')) {
+    file_put_contents('error_log.txt', 'cURL not supported', FILE_APPEND);
+}
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
