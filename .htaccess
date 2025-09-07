@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^login$ index.html [L]
+RewriteRule ^auth$ login.php [L]
